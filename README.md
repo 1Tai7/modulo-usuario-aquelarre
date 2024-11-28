@@ -3,7 +3,7 @@ GET:
 `curl --location 'localhost:8080/api/v1/usuarios' `
 
 POST: 
-` curl --location 'localhost:8080/api/v1/usuarios' \
+curl --location 'localhost:8080/api/v1/usuarios' \
 --header 'Content-Type: application/json' \
 --data-raw '   {
     
@@ -12,7 +12,7 @@ POST:
         "contrasena": "asdfgh",
         "email": "jjavier@gamil.com",
         "id_rol": "2"
-    }' `
+    }' 
 
 
 DELETE:
