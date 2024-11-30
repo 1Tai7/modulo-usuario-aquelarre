@@ -1,4 +1,4 @@
-POSTMAN
+USUARIO
 GET:
 
  ´´´ 
@@ -27,6 +27,10 @@ DELETE:
 curl --location --request DELETE 'localhost:8080/api/v1/usuarios/3' 
 
 ´´´
+
+POSTEO
+GET: 
+
 
 
 GITHUB: https://github.com/1Tai7/modulo-usuario-aquelarre

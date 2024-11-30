@@ -1,6 +1,5 @@
 package com.example.aquelarre.entity;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,26 +11,18 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "usuario")
+@Table(name = "comentario")
 
-public class Usuario {
+public class Comentario {
+
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
-    private Long id_usuario;
+    private Long id_comentario;
 
-    private String nombre;
+    private String texto;
 
-    private String alias;
-
-    private String contrasena;
-
-    private String id_rol;
-
-    @Column(name = "email",unique = true,nullable = false)
-    private String email;
-
-   
+     @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
 
 }
-
-

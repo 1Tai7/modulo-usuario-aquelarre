@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.aquelarre.entity.Usuario;
 import com.example.aquelarre.service.UsuarioService;
 
+
 @RestController
 @RequestMapping(path = "api/v1/usuarios")
 public class UsuarioController {
@@ -31,6 +32,7 @@ public class UsuarioController {
         return usuarioService.getUsuario();
     }
 
+   
     @GetMapping("/{usuarioId}")
     public Optional<Usuario> getbyId(@PathVariable("usuarioId") Long usuarioId){
 
@@ -41,6 +43,7 @@ public class UsuarioController {
     public Usuario saveUpdate(@RequestBody Usuario usuario){
 
         usuarioService.saveOrUpdate(usuario);
+
         return usuario;
     }
 
@@ -49,4 +52,7 @@ public class UsuarioController {
 
         usuarioService.delete(usuarioId);
     }
+
+   
+    
 }
