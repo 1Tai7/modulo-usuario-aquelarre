@@ -17,12 +17,15 @@ public class Comentario {
 
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
-    private Long id_comentario;
+    private Long comentario;
 
     private String texto;
 
-     @ManyToOne
-    @JoinColumn(name = "id_usuario")
-    private Usuario usuario;
+     @ManyToOne(targetEntity =  Usuario.class)
+     @JoinColumn(name = "id_usuario")
+      private Usuario usuario;
+
+    @ManyToOne(targetEntity = Post.class)
+    private Post post;
 
 }

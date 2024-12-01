@@ -3,10 +3,10 @@ package com.example.aquelarre.entity;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -26,12 +26,9 @@ public class Post {
 
     private String alias;
     
-    private String id_usuario;
-
-    @OneToMany
+    @OneToMany(targetEntity = Comentario.class, fetch = FetchType.LAZY, mappedBy = "post")
     private List<Comentario> comentario;
 
-       @ManyToOne
-       @JoinColumn(name = "usuario")
-       private Usuario usuario;
+    @ManyToOne(targetEntity = Usuario.class)
+    private Usuario usuario;
 }
