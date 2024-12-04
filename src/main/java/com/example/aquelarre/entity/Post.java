@@ -25,10 +25,10 @@ public class Post {
     private String hashtag;
 
     private String alias;
+    private String texto;
     
-    @OneToMany(targetEntity = Comentario.class, fetch = FetchType.LAZY, mappedBy = "post")
+    // @OneToMany(targetEntity = Comentario.class, fetch = FetchType.LAZY, mappedBy = "post_id_post")
+    @OneToMany(targetEntity = Comentario.class, fetch = FetchType.LAZY)
     private List<Comentario> comentario;
-
-    @ManyToOne(targetEntity = Usuario.class)
-    private Usuario usuario;
+private Long id_usuario;
 }

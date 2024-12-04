@@ -38,13 +38,13 @@ public class PostController {
         return postService.getPost(postId);
     }
 
-    // @PostMapping
-    // public Post saveUpdate(@RequestBody Post post){
-    //     // postService.getUsuarioByPost(post);
-    //     postService.saveOrUpdate(post);
+     @PostMapping
+     public Post saveUpdate(@RequestBody Post post){
 
-    //     return post;
-    // }
+         postService.saveOrUpdate(post);
+
+         return post;
+     }
 
        @DeleteMapping("/{postId}")
     public void delete(@PathVariable("postId") Long postId){

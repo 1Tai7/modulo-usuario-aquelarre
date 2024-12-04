@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.example.aquelarre.repository.PostRepository;
 import com.example.aquelarre.repository.UsuarioRepository;
 import com.example.aquelarre.entity.Post;
+import com.example.aquelarre.entity.Usuario;
 
 @Service
 public class PostService {
@@ -34,7 +35,7 @@ public List<Post> getPost(){
         postRepository.deleteById(id);
     }
 
-       public void getUsuarioByPost(Long id){
-        usuarioRepository.findById(id);
+       public Optional<Usuario> getUsuarioByPost(Long id){
+        return usuarioRepository.findById(id);
     }
 }

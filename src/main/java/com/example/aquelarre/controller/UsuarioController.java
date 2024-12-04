@@ -41,6 +41,7 @@ public class UsuarioController {
 
     @PostMapping
     public Usuario saveUpdate(@RequestBody Usuario usuario){
+        
 
         usuarioService.saveOrUpdate(usuario);
 

@@ -9,8 +9,9 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -21,22 +22,24 @@ import lombok.Data;
 public class Usuario {
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
-    private Long id_usuario;
+    public Long id_usuario;
 
-    private String nombre;
+    public String nombre;
 
-    private String alias;
+    public String alias;
 
-    private String contrasena;
+    public String contrasena;
+    
+    @Column(name = "id_rol",unique = false,nullable = false)
+    public Long id_rol;
 
-    @OneToOne(targetEntity = Usuario.class, cascade = CascadeType.PERSIST)
-    private Rol rol;
+   
 
     @Column(name = "email",unique = true,nullable = false)
-    private String email;
+    public String email;
 
-    @OneToMany(targetEntity = Post.class, fetch = FetchType.LAZY, mappedBy = "usuario")
-  private List<Post> post;
+    @OneToMany(targetEntity = Post.class, fetch = FetchType.LAZY, mappedBy = "id_usuario")
+  public List<Post> post;
 
 }
 
