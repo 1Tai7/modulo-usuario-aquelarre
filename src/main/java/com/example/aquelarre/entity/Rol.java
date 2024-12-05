@@ -31,5 +31,6 @@ public class Rol {
     @OneToMany(targetEntity = Usuario.class, fetch = FetchType.LAZY)
     private List<Usuario> usuario;
 
+    public Rol(){}
 
 }

@@ -23,4 +23,15 @@ public class Comentario {
     private Long id_usuario;
     private Long id_post;
 
+    public Comentario(){
+        
+    }
+
+      public Comentario(Long id_comentario, String texto, Long id_usuario, Long id_post){
+    this.id_usuario = id_usuario;
+    this.texto = texto;
+    this.id_usuario = id_usuario;
+    this.id_post = id_post;
+  }
+
 }
